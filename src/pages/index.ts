@@ -1,0 +1,6 @@
+export { Home } from "./Home"
+export { Projects } from "./Projects"
+export { ProjectDetail } from "./ProjectDetail"
+export { About } from "./About"
+export { Trainer } from "./Trainer"
+export { Contact } from "./Contact"
