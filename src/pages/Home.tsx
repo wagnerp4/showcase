@@ -74,9 +74,10 @@ function NetworkGraph() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-2 mb-6">
+      <div className="relative flex items-center justify-between px-4 mb-6">
+        <div className="absolute top-1/2 left-8 right-8 h-px border-t border-dashed border-border-light -translate-y-3" />
         {nodes.map((node, i) => (
-          <div key={i} className="flex flex-col items-center gap-2">
+          <div key={i} className="relative z-10 flex flex-col items-center gap-2">
             <div className={`${node.size} ${node.color} rounded-full`} />
             <span className="font-mono text-[10px] text-mist">{node.label}</span>
           </div>
@@ -85,7 +86,9 @@ function NetworkGraph() {
 
       <div className="flex items-center justify-between pt-3 border-t border-border">
         <span className="font-mono text-xs text-mist">Loss 0.041 · ↓ 12%</span>
-        <span className="font-mono text-xs text-lumen">training</span>
+        <Link to="/trainer" className="font-mono text-xs text-lumen hover:text-lumen/80 transition-colors">
+          Launch →
+        </Link>
       </div>
     </GlassCard>
   )
@@ -142,7 +145,7 @@ export function Home() {
             </h1>
 
             <p className="text-lg text-mist max-w-lg mb-8">
-              A personal lab for deep learning, computational neuroscience and soft robotics - rendered as living, molten-glass interfaces you can reach in and poke.
+              A personal lab for deep learning, computational neuroscience and soft robotics — rendered as living, molten-glass interfaces you can reach in and poke.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -161,7 +164,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto py-12 border-t border-border">
+      <section className="max-w-6xl mx-auto py-16">
         <div className="grid grid-cols-3 gap-8 text-center md:text-left">
           <div>
             <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">24</div>
@@ -178,13 +181,13 @@ export function Home() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto py-12">
-        <div className="flex items-end justify-between mb-8">
+      <section className="max-w-6xl mx-auto pt-8 pb-12">
+        <div className="flex items-center justify-between mb-8">
           <div>
             <span className="eyebrow text-lumen block mb-2">Selected work</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-ice">Projects in the chamber</h2>
           </div>
-          <Link to="/projects" className="font-mono text-sm text-mist hover:text-ice transition-colors hidden sm:block">
+          <Link to="/projects" className="font-mono text-sm text-mist hover:text-ice transition-colors hidden sm:block self-end">
             All 24 →
           </Link>
         </div>
@@ -207,7 +210,7 @@ export function Home() {
               <span className="eyebrow text-ember block mb-2">Now building</span>
               <h2 className="text-3xl font-semibold text-ice mb-4">The Trainer</h2>
               <p className="text-mist mb-6">
-                A drag-in playground for prototyping networks - wire layers, set a loss, and watch the gradient field ripple through obsidian glass.
+                A drag-in playground for prototyping networks — wire layers, set a loss, and watch the gradient field ripple through obsidian glass.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["PyTorch", "CUDA", "MuJoCo", "JAX"].map((chip) => (
@@ -217,11 +220,8 @@ export function Home() {
                 ))}
               </div>
             </div>
-            <div className="space-y-4">
+            <div>
               <NetworkGraph />
-              <Link to="/trainer" className="btn-primary w-full justify-center">
-                Launch →
-              </Link>
             </div>
           </div>
         </GlassCard>

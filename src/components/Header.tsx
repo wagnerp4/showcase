@@ -15,19 +15,19 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <header className="relative z-50 px-6 py-7">
       <nav className="max-w-6xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-lg bg-slate flex items-center justify-center border border-border-light">
+          <div className="w-10 h-10 rounded-xl bg-slate flex items-center justify-center border border-border-light">
             <span className="font-mono text-sm font-medium text-ice">wp</span>
           </div>
           <div className="hidden sm:block">
-            <div className="text-sm font-medium text-ice">wagnerp4 · neuro & robotics</div>
-            <div className="text-xs text-mist font-mono uppercase tracking-widest">obsidian studio</div>
+            <div className="text-sm font-medium text-ice leading-tight">wagnerp4 · neuro & robotics</div>
+            <div className="text-[10px] text-mist font-mono uppercase" style={{ letterSpacing: "0.32em" }}>obsidian studio</div>
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -46,7 +46,7 @@ export function Header() {
             href="https://github.com/wagnerp4"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full border border-border-light text-ice hover:bg-white/5 transition-colors"
+            className="font-mono text-xs uppercase tracking-widest px-4 py-2 rounded-full bg-ice text-void hover:bg-ice/90 transition-colors"
           >
             GitHub →
           </a>
