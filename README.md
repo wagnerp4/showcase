@@ -1,6 +1,10 @@
 # wagnerp4 - neuro, robotics & deep learning
 
+**Live Site:** [https://wagnerp4.github.io/showcase/](https://wagnerp4.github.io/showcase/)
+
 A personal portfolio site showcasing experiments in deep learning, computational neuroscience, and soft robotics. Built with a dark molten-glass aesthetic featuring animated background blobs, glass-morphism cards, and a cyan/violet/coral accent palette.
+
+Hosted on GitHub Pages with automated deployments via GitHub Actions.
 
 ## Tech Stack
 
