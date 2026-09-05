@@ -2,53 +2,33 @@ import { Link } from "react-router-dom"
 import { GlassCard } from "../components"
 import { projects, getCategoryColor, getAccentDots } from "../data/projects"
 
-function LossChart() {
-  const bars = [
-    { height: 85, color: "bg-lumen" },
-    { height: 70, color: "bg-lumen" },
-    { height: 90, color: "bg-lumen" },
-    { height: 65, color: "bg-lumen" },
-    { height: 55, color: "bg-plasma" },
-    { height: 75, color: "bg-plasma" },
-    { height: 50, color: "bg-plasma" },
-    { height: 60, color: "bg-plasma" },
-    { height: 45, color: "bg-ember" },
-    { height: 70, color: "bg-ember" },
-    { height: 40, color: "bg-ember" },
-    { height: 55, color: "bg-ember" },
-  ]
-
+function FeaturedHighlight() {
   return (
     <GlassCard className="p-5 w-full max-w-sm">
       <div className="flex items-center justify-between mb-4">
-        <span className="micro-label">Loss · transformer-9</span>
+        <span className="micro-label">Featured · EUSIPCO 2024</span>
         <div className="w-2 h-2 rounded-full bg-lumen" />
       </div>
-      
-      <div className="flex items-end gap-1.5 h-24 mb-4">
-        {bars.map((bar, i) => (
-          <div
-            key={i}
-            className={`flex-1 rounded-sm ${bar.color}`}
-            style={{ height: `${bar.height}%` }}
-          />
-        ))}
-      </div>
+
+      <h3 className="text-lg font-semibold text-ice mb-2">Audio-Based Speed Estimation</h3>
+      <p className="text-sm text-mist mb-4">
+        Step-count estimation for running using windowing and neural network baselines.
+      </p>
 
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
-          <div className="micro-label mb-1">Epoch</div>
-          <div className="text-2xl font-semibold text-ice">142 <span className="text-mist text-lg">/ 200</span></div>
+          <div className="micro-label mb-1">Venue</div>
+          <div className="text-sm font-semibold text-ice">EUSIPCO</div>
         </div>
         <div>
-          <div className="micro-label mb-1">Throughput</div>
-          <div className="text-2xl font-semibold text-ice">18.4k <span className="text-mist text-lg">/s</span></div>
+          <div className="micro-label mb-1">Year</div>
+          <div className="text-sm font-semibold text-ice">2024</div>
         </div>
       </div>
 
       <div className="flex items-center justify-between pt-3 border-t border-border">
-        <span className="font-mono text-xs text-mist">η = 3e-4 · wd 0.01</span>
-        <span className="font-mono text-xs text-lumen">converging</span>
+        <span className="font-mono text-xs text-mist">Wagner et al.</span>
+        <span className="font-mono text-xs text-lumen">published</span>
       </div>
     </GlassCard>
   )
@@ -85,9 +65,9 @@ function NetworkGraph() {
       </div>
 
       <div className="flex items-center justify-between pt-3 border-t border-border">
-        <span className="font-mono text-xs text-mist">Loss 0.041 · ↓ 12%</span>
-        <Link to="/trainer" className="font-mono text-xs text-lumen hover:text-lumen/80 transition-colors">
-          Launch →
+        <span className="font-mono text-xs text-mist">M3SGG · Scene Graph</span>
+        <Link to="/projects/m3sgg" className="font-mono text-xs text-lumen hover:text-lumen/80 transition-colors">
+          View →
         </Link>
       </div>
     </GlassCard>
@@ -132,34 +112,34 @@ export function Home() {
           <div>
             <div className="flex items-center gap-2 mb-8">
               <div className="w-2 h-2 rounded-full bg-lumen animate-pulse" />
-              <span className="eyebrow text-lumen">Live</span>
-              <span className="eyebrow text-mist">· Training loop active</span>
+              <span className="eyebrow text-lumen">Research</span>
+              <span className="eyebrow text-mist">· ML & Robotics</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-[78px] font-semibold leading-[1.05] tracking-tight mb-6">
-              <span className="text-ice">Shaping</span>
+              <span className="text-ice">Building</span>
               <br />
-              <span className="gradient-text">synthetic minds</span>
+              <span className="gradient-text">intelligent systems</span>
               <br />
-              <span className="text-mist">one neuron at a time.</span>
+              <span className="text-mist">that see, hear, and move.</span>
             </h1>
 
             <p className="text-lg text-mist max-w-lg mb-8">
-              A personal lab for deep learning, computational neuroscience and soft robotics — rendered as living, molten-glass interfaces you can reach in and poke.
+              A personal lab for deep learning, audio and multimodal research, and robotics — from Transformer OCR to BCI-controlled robotic arms.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link to="/projects" className="btn-primary">
                 View projects →
               </Link>
-              <Link to="/trainer" className="btn-ghost">
-                Start a trainer
+              <Link to="/about" className="btn-ghost">
+                About me
               </Link>
             </div>
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <LossChart />
+            <FeaturedHighlight />
           </div>
         </div>
       </section>
@@ -167,16 +147,16 @@ export function Home() {
       <section className="max-w-6xl mx-auto py-16">
         <div className="grid grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">24</div>
-            <div className="micro-label">Experiments</div>
+            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">3</div>
+            <div className="micro-label">Publications</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">3.1<span className="text-plasma">M</span></div>
-            <div className="micro-label">Neurons trained</div>
+            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">{projects.length}</div>
+            <div className="micro-label">Featured projects</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">0.98</div>
-            <div className="micro-label">Top val acc</div>
+            <div className="text-3xl md:text-4xl font-semibold text-ice mb-1">ML</div>
+            <div className="micro-label">& Robotics</div>
           </div>
         </div>
       </section>
@@ -185,10 +165,10 @@ export function Home() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <span className="eyebrow text-lumen block mb-2">Selected work</span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-ice">Projects in the chamber</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-ice">Projects in the lab</h2>
           </div>
           <Link to="/projects" className="font-mono text-sm text-mist hover:text-ice transition-colors hidden sm:block self-end">
-            All 24 →
+            All {projects.length} →
           </Link>
         </div>
 
@@ -199,7 +179,7 @@ export function Home() {
         </div>
 
         <Link to="/projects" className="font-mono text-sm text-mist hover:text-ice transition-colors block text-center mt-6 sm:hidden">
-          All 24 →
+          All {projects.length} →
         </Link>
       </section>
 
@@ -207,13 +187,13 @@ export function Home() {
         <GlassCard className="p-6 md:p-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <span className="eyebrow text-ember block mb-2">Now building</span>
-              <h2 className="text-3xl font-semibold text-ice mb-4">The Trainer</h2>
+              <span className="eyebrow text-ember block mb-2">Current focus</span>
+              <h2 className="text-3xl font-semibold text-ice mb-4">M3SGG Framework</h2>
               <p className="text-mist mb-6">
-                A drag-in playground for prototyping networks — wire layers, set a loss, and watch the gradient field ripple through obsidian glass.
+                A modular multi-modal framework for video scene graph generation — combining visual and temporal reasoning for structured video understanding.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["PyTorch", "CUDA", "MuJoCo", "JAX"].map((chip) => (
+                {["PyTorch", "Transformers", "Video", "Scene Graphs"].map((chip) => (
                   <span key={chip} className="font-mono text-xs px-3 py-1.5 rounded-full border border-border text-mist">
                     {chip}
                   </span>

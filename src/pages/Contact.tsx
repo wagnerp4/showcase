@@ -9,7 +9,7 @@ export function Contact() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    const mailtoLink = `mailto:wagner.philipp99908@gmail.com?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(name)} (${encodeURIComponent(email)})`
+    const mailtoLink = `mailto:philipp99.wagner@tum.de?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(name)} (${encodeURIComponent(email)})`
     window.location.href = mailtoLink
   }
 
@@ -24,11 +24,11 @@ export function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h1 className="text-4xl md:text-5xl font-semibold text-ice mb-6 leading-tight">
-              Let's build something alive.
+              Let's build something together.
             </h1>
 
             <p className="text-lg text-mist">
-              Open to research collabs, residencies, and the occasional impossible demo.
+              Open to research collaborations, ML/robotics projects, and interesting technical challenges.
             </p>
           </div>
 
@@ -36,14 +36,14 @@ export function Contact() {
             <GlassCard className="p-4 flex items-center justify-between">
               <span className="micro-label">email</span>
               <a
-                href="mailto:wagner.philipp99908@gmail.com"
+                href="mailto:philipp99.wagner@tum.de"
                 className="font-mono text-sm text-ice hover:text-lumen transition-colors"
               >
-                wagner.philipp99908@gmail.com →
+                philipp99.wagner@tum.de →
               </a>
             </GlassCard>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               <GlassCard className="p-4">
                 <span className="micro-label block mb-1">github</span>
                 <a
@@ -66,9 +66,30 @@ export function Contact() {
                   heoj1N
                 </a>
               </GlassCard>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <GlassCard className="p-4">
+                <span className="micro-label block mb-1">linkedin</span>
+                <a
+                  href="https://linkedin.com/in/philipp-a-wagner"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-ice hover:text-lumen transition-colors"
+                >
+                  philipp-a-wagner
+                </a>
+              </GlassCard>
               <GlassCard className="p-4">
                 <span className="micro-label block mb-1">portfolio</span>
-                <span className="text-sm text-ice">previous</span>
+                <a
+                  href="https://portfolheo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-ice hover:text-lumen transition-colors"
+                >
+                  previous →
+                </a>
               </GlassCard>
             </div>
 

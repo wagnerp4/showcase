@@ -1,8 +1,10 @@
-# wagnerp4 - neuro, robotics & deep learning
+# wagnerp4 - ML, Robotics & Deep Learning
 
 **Live Site:** [https://wagnerp4.github.io/showcase/](https://wagnerp4.github.io/showcase/)
 
-A personal portfolio site showcasing experiments in deep learning, computational neuroscience, and soft robotics. Built with a dark molten-glass aesthetic featuring animated background blobs, glass-morphism cards, and a cyan/violet/coral accent palette.
+A personal portfolio site showcasing Philipp Wagner's research and projects in deep learning, audio and multimodal processing, and robotics. Built with a dark molten-glass aesthetic featuring animated background blobs, glass-morphism cards, and a cyan/violet/coral accent palette.
+
+**Note:** All content reflects Philipp Wagner's public work from his CV, GitHub repositories ([wagnerp4](https://github.com/wagnerp4), [heoj1N](https://github.com/heoj1N)), and published research.
 
 Hosted on GitHub Pages with automated deployments via GitHub Actions.
 
@@ -33,12 +35,23 @@ npm run preview
 
 | Path | Description |
 |------|-------------|
-| `/` | Home page with hero, stats, featured projects, trainer teaser |
-| `/projects` | All experiments index |
+| `/` | Home page with hero, stats, featured projects |
+| `/projects` | All projects index |
 | `/projects/:slug` | Individual project detail pages |
-| `/about` | Research / About page |
+| `/about` | Research / About page with experience and publications |
 | `/trainer` | Trainer (under construction) |
 | `/contact` | Contact form |
+
+## Featured Projects
+
+- **M3SGG** - Modular multi-modal framework for video scene graph generation
+- **Speed Estimation** - Audio-based speed/step-count estimation (EUSIPCO 2024)
+- **TrOCR / OOCR** - Transformer OCR training framework
+- **Autrainer SED** - Sound event detection extension
+- **neuroTUM BCI Arm** - BCI-controlled robotic arm (NEURA Robotics Challenge)
+- **Rustic Knights** - Chess in Babylon.js + TypeScript + Rust
+- **RL Algos** - Reinforcement learning algorithms collection
+- **yogAI** - Yoga pose-detection webapp
 
 ## Design Tokens
 
