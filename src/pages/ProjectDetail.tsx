@@ -12,6 +12,12 @@ export function ProjectDetail() {
 
   const categoryClass = getCategoryColor(project.categoryColor)
 
+  const statusColors = {
+    published: "text-lumen",
+    prototype: "text-plasma",
+    wip: "text-ember",
+  }
+
   return (
     <div className="px-6">
       <section className="max-w-6xl mx-auto py-12">
@@ -49,24 +55,37 @@ export function ProjectDetail() {
             </ul>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href={`https://github.com/wagnerp4/${project.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                View source →
-              </a>
-              <Link to="/trainer" className="btn-ghost">
-                Open trainer
-              </Link>
+              {project.repoUrl ? (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  View source →
+                </a>
+              ) : (
+                <span className="btn-primary opacity-50 cursor-not-allowed">
+                  Private repo
+                </span>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost"
+                >
+                  Live demo →
+                </a>
+              )}
             </div>
           </div>
 
           <div>
             <GlassCard className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="micro-label">Live preview</span>
+                <span className="micro-label">Project preview</span>
               </div>
 
               <div className="aspect-video bg-obsidian rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
@@ -77,14 +96,27 @@ export function ProjectDetail() {
                     filter: "blur(20px)",
                   }}
                 />
-                <span className="font-mono text-xs text-mist uppercase tracking-widest relative z-10">
-                  Interactive demo coming soon
-                </span>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs text-ice uppercase tracking-widest relative z-10 hover:text-lumen transition-colors"
+                  >
+                    Visit live site →
+                  </a>
+                ) : (
+                  <span className="font-mono text-xs text-mist uppercase tracking-widest relative z-10">
+                    {project.repoUrl ? "View on GitHub" : "Award-winning project"}
+                  </span>
+                )}
               </div>
 
               <div className="flex items-center justify-between pt-4 border-t border-border">
                 <span className="micro-label">Status</span>
-                <span className="font-mono text-xs text-plasma">prototype</span>
+                <span className={`font-mono text-xs ${statusColors[project.status]}`}>
+                  {project.status}
+                </span>
               </div>
             </GlassCard>
           </div>

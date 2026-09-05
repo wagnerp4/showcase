@@ -6,6 +6,12 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
   const categoryClass = getCategoryColor(project.categoryColor)
   const dots = getAccentDots(project.categoryColor)
 
+  const statusColors = {
+    published: "text-lumen",
+    prototype: "text-plasma",
+    wip: "text-ember",
+  }
+
   return (
     <Link to={`/projects/${project.slug}`}>
       <GlassCard className="p-5 h-full" hover>
@@ -13,7 +19,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           <span className={`font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded ${categoryClass}`}>
             {project.category}
           </span>
-          <span className="font-mono text-xs text-mist">{project.version}</span>
+          <span className={`font-mono text-xs ${statusColors[project.status]}`}>{project.status}</span>
         </div>
         <h3 className="text-lg font-semibold text-ice mb-2">{project.title}</h3>
         <p className="text-sm text-mist mb-4">{project.description}</p>
@@ -40,11 +46,11 @@ export function Projects() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-semibold text-ice mb-4">
-          All experiments
+          All projects
         </h1>
 
         <p className="text-lg text-mist max-w-2xl mb-12">
-          A growing collection of interactive demos, research prototypes and visual explanations across deep learning, computational neuroscience and robotics.
+          A collection of research projects, prototypes, and tools across deep learning, audio and multimodal processing, robotics, and interactive systems.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
