@@ -4,7 +4,7 @@ import { Home, Projects, ProjectDetail, About, Trainer, Contact } from "./pages"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/showcase">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
